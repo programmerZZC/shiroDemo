@@ -36,9 +36,10 @@ public class MyController {
         AuthenticationToken token = new UsernamePasswordToken(name,pwd,rememberMe);
         // 3.调用login方法进行登录认证
         try {
-            subject.login(token);
+              subject.login(token);
 //            return "登陆成功";
             session.setAttribute("user",token.getPrincipal().toString());
+//            System.out.println("myController---->"+token.getPrincipal().toString());
             return "main";
         } catch (AuthenticationException e) {
             e.printStackTrace();

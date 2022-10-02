@@ -58,6 +58,7 @@ public class MyRealm extends AuthorizingRealm {
                     ByteSource.Util.bytes("salt"),
                     authenticationToken.getPrincipal().toString()
             );
+//            System.out.println("MyRealm--->"+info.getPrincipals().toString());
             return info;
         }
         return null;
