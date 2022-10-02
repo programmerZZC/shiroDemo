@@ -1,0 +1,27 @@
+# 应用名称
+spring:
+  application:
+    name: demo
+  datasource:
+    # 数据库连接地址
+    url: jdbc:mysql://localhost:3306/shirodb?useUnicode=true&characterEncoding=utf-8&useSSL=false&allowMultiQueries=true&serverTimezone=Hongkong&allowPublicKeyRetrieval=true
+    # 数据库用户名&密码：
+    username: root
+    password: 123456
+    # 数据库驱动：
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jackson:
+    data-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+# 应用服务 WEB 访问端口
+server:
+  port: 8080
+#下面这些内容是为了让MyBatis映射
+#指定Mybatis的Mapper文件
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mappers/*xml
+
+shiro:
+  loginUrl: /myController/login
